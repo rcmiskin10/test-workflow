@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{# Hero Section #}
+<div class="hero-section">
+  <div class="container">
+    <div class="hero-wrapper">
+      <h1 class="hero-heading">Cable &amp; Wire Needs</h1>
+      <p class="hero-paragraph"><em>BAYSTATE</em> <em>Wire &amp; Cable</em> is your one stop shop for all cable and
+        connectivity needs.</p>
+      <div class="hero-button-wrapper">
+        <a href="shop.html" class="btn light outline w-button">View Products</a>
+      </div>
+    </div>
+  </div>
+</div>
+{# Main Section #}
+<div class="support-section">
+  <div class="container">
+    <div class="support-top-wrapper">
+      <div class="support-top-left">
+        <div class="support-top-details-text">We are the right distributor for you</div>
+        <h2 class="support-top-heading"><span class="text-span">Services</span></h2>
+      </div>
+      <div class="support-top-right"></div>
+    </div>
+    <div class="support-wrapper">
+      <div class="support-column">
+        <div class="support-square">
+          <div class="support-square-text">Temperature Controls</div><img src="{% static 'images/Circle.svg' %}"
+            alt="Circle Decoration in Shop Products Block" class="support-square-image">
+        </div>
+        <p><em>BAYSTATE WIRE &amp; CABLE</em> offers a number of different constructions 24 through 12 AWG, in both
+          shielded and non-shielded.</p>
+      </div>
+      <div class="support-column">
+        <div class="support-square">
+          <div class="support-square-text">Custom Design Cables</div><img src="{% static 'images/Triangle.svg' %}"
+            alt="Triangle Decoration in Donate Block" class="support-square-image triangle">
+        </div>
+        <p class="paragraph-3">If you need a cable built for a specific need, please let us know. We can build to your
+          specification or work with you to design a specification that meets your needs in a reasonable amount of
+          time.</p>
+      </div>
+      <div class="support-column">
+        <div class="support-square">
+          <div class="support-square-text">Harness and Assembly</div><img src="{% static 'images/Rectangle.svg' %}"
+            alt="Rectangle Decoration in Buy Gift Cards Block" class="support-square-image rectangle">
+        </div>
+        <p>Our harness and Assembly division has the ability to work with engineers and supply teams to offer the best
+          turnkey manufacturing solutions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="products-section">
+  <div class="container">
+    <div class="shop-top-wrapper">
+      <div class="support-top-left">
+        <div class="support-top-details-text">Want a price estimate?</div>
+        <h2 class="support-top-heading">Browse Products</h2>
+      </div>
+      <div class="support-top-right"></div>
+    </div>
+    <div class="products-list-wrapper w-dyn-list">
+      {% if products %}
+      <div role="list" class="products-list w-dyn-items">
+        {% for product in products %}
+        <div role="listitem" class="w-dyn-item">
+          <div class="shop-item-wrapper">
+            <a href="#" class="shop-item-link-wrapper w-inline-block">
+              <div class="shop-image tumbler-1"></div>
+              <div class="shop-details-wrapper">
+                <div class="shop-details-left">
+                  <div class="shop-item-name">{{ product.name }}</div>
+                  <div class="price-wrapper">
+                    <div class="shop-item-price"></div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="shop-button-wrapper">
+              <a href="products/{{product.slug}}/" class="btn w-button">Details</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="w-dyn-empty">
+        <div>No items found.</div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="shop-more">
+      <a href="shop.html" class="btn dark w-button">View All Products</a>
+    </div>
+  </div>
+</div>
+<div class="shop-local-section">
+  <div class="container shop-local-container">
+    <div class="shop-local-wrapper">
+      <div class="shop-local-left"></div>
+      <div class="shop-local-right">
+        <div class="shop-local-content-wrapper">
+          <h2 class="shop-local-heading">About Us</h2>
+          <p class="paragraph"><em>BAYSTATE Wire &amp; Cable </em>is a regional supplier servicing Massachusetts and
+            New England for over thirty years. Our Industry knowledge and expertise allows us to effectively meet and
+            exceed our customer’s demands. We carry all major wire &amp; cable brands, but also build our stock around
+            our customer’s specific needs. If we don’t have something on the shelf that you use, let us know and we
+            will stock it for you. If you need a special application wire or cable, we will have it manufactured for
+            you.<br><br>We believe that building strong vendor relationships is key to providing our customers with
+            the highest quality <strong>product</strong> and <strong>services</strong> at the very best value</p>
+          <p class="paragraph-2">-------</p>
+          <div class="text-block-3">Ranagan Family</div>
+          <div><strong class="bold-text"><em>BAYSTATE W&amp;C</em></strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
